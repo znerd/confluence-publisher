@@ -171,10 +171,14 @@ module Slim::Helpers
 
   # removes leading hash from anchor targets
   def anchor_name str
-    if str.start_with? "#"
-      str[1..str.length]
+    if str.nil?
+      ""
     else
-      str
+      if str.start_with? "#"
+        str[1..str.length]
+      else
+        str
+      end
     end
   end
 
